@@ -29,6 +29,11 @@ const STATUS_VARIANTS = {
   purchased: 'success' as const,
 };
 
+// Для статического экспорта - генерируем пустой список
+export async function generateStaticParams() {
+  return [];
+}
+
 export default function WishlistPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const { wishlists, addItem, updateItem, deleteItem } = useWishlists();
